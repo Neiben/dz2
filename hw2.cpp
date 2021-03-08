@@ -285,11 +285,47 @@ int main()
            /*cout <<endl<< A<< endl;
            cout << B << endl;*/
             answer.push_back(calculate(B, A, tmp3));
-            tmp3 = "";
+            float b = stof(answer.back());
+            cout << endl << b;
+            cout << endl;
+            G = to_string(b);
+            cout << G;
+           
+            for (int i = 0; i < G.size(); i++) {
+                if (G.back() == '0') {
+                    G.pop_back();
+                }
+            }
+            for (int i = 0; i < G.size(); i++) {
+                if (G.back() == '0') {
+                    G.pop_back();
+                }
+            }
+            for (int i = 0; i < G.size(); i++) {
+                if (G.back() == '.') {
+                    G.pop_back();
+                }
+            }
+            cout << endl << G;
+            answer.pop_back();
+              
+            for (int i = 0; i < G.size(); i++) {
+                tmp6 += G[i];
+                answer.push_back(tmp6);
+                tmp6 = "";
+            }
+            cout << endl;
+            for (int i = 0; i < answer.size(); i++) {
+                cout << answer[i];
+            }
+           
+
+            G = "";
             A = "";
             B = "";
             reez = "";
             reez2 = "";
+            tmp3 = "";
           
             
         }
@@ -298,8 +334,10 @@ int main()
        
            
     }
-   std:: cout << endl << " your answer is : " << answer.back();
-
+   std:: cout << endl << " your answer is : ";
+   for (int i = 0; i < answer.size(); i++) {
+       cout << answer[i];
+   }
 
 }
 
