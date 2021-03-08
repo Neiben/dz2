@@ -67,7 +67,7 @@ string calculate(string a, string b, string op) {
         return to_string(C);
     }
     if (op == "/") {
-        C = A + B;
+        C = A / B;
         to_string(C);
         return to_string(C);
     }
@@ -229,6 +229,13 @@ int main()
                     }
 
                 }
+                else if (op(tmp4)) {
+                    A += tmp4;
+                    tmp4 = "";
+                    if (!answer.empty()) {
+                        answer.pop_back();
+                    }
+                }
                 else if (tmp4 == " ") {
                     if ((!answer.empty()) && (answer.back() == " ")) {
                         answer.pop_back();
@@ -263,6 +270,13 @@ int main()
                             }
 
                         }
+                        else if (op(tmp5)) {
+                            B += tmp5;
+                            tmp5 = "";
+                            if (!answer.empty()) {
+                                answer.pop_back();
+                            }
+                        }
                         else if  ((answer.empty()) || (tmp5 == abc))
                         {
                            
@@ -280,8 +294,8 @@ int main()
           
            
             
-            std ::reverse(A.begin(), A.end());
-           std :: reverse(B.begin(), B.end());
+           reverse(A.begin(), A.end());
+            reverse(B.begin(), B.end());
            /*cout <<endl<< A<< endl;
            cout << B << endl;*/
             answer.push_back(calculate(B, A, tmp3));
@@ -334,7 +348,7 @@ int main()
        
            
     }
-   std:: cout << endl << " your answer is : ";
+   cout << endl << " your answer is : ";
    for (int i = 0; i < answer.size(); i++) {
        cout << answer[i];
    }
@@ -343,190 +357,6 @@ int main()
 
 
 
-
-
-
-
-
-
-
-        //    /*  reverse(answer.begin(), answer.end());*/
-        //    if (answer.back() == abc) {
-        //        answer.pop_back();
-        //    }
-        //    
-
-        //    
-        //    for (int i = 0; i < answer.size(); i++) {
-        //        reez += answer[i];
-        //    }
-
-        //    answer.clear();
-     
-        //    for (int i = reez.size(); i > 0; i--) {
-        //        tmp4 += reez[i];
-        //        if (isdigit(reez[i])) {
-        //            A += tmp4;
-        //            tmp4 = "";
-        //            
-        //           
-        //        }
-        //        else if (tmp4 == ".") {
-        //            A += tmp4;
-        //            tmp4 = ""; 
-        //           
-        //        }
-        //        else if (tmp4 == abc) {
-        //           
-        //            for (int i = 0; i < reez.size() - A.size(); i++) {
-        //                reez2 += reez[i];
-        //            
-        //            }
-        //            if (reez2.back() == ' ') {
-        //                reez2.pop_back();
-        //            }
-        //            for (int i = reez2.size(); i > 0; i--) {
-        //                tmp5 += reez2[i];
-        //               
-        //                if (isdigit(reez2[i])) {
-        //                    B += tmp5;
-        //                    tmp5 = "";
-        //                }
-        //                else if (tmp5 == ".") {
-        //                    B += tmp5;
-        //                    tmp5 = "";
-        //                    
-        //                }
-        //                else if (tmp5 == abc) {
-        //                    
-        //                            break;
-        //                            tmp5 = "";
-        //                    }
-        //                  
-        //                }
-        //            }
-        //            tmp4 = "";
-        //        }
-
-        //    }
-        //    for (int i = 0; i < B.size(); i++) {
-        //        if (B[i] == ' ')
-        //        {
-        //            B.erase(B.begin() + i);
-        //            break;
-        //        }
-        //    }
-        //for (int i = 0; i < reez2.size(); i++) {
-        //    tmp6 += reez2[i];
-        //    if (isdigit(reez2[i])) {
-        //        answer.push_back(tmp6);
-        //        tmp6 = "";
-        //    }
-        //    else if (tmp6 == ".") {
-        //        answer.push_back(tmp6);
-        //        tmp6 = "";
-        //    }
-        //    else if (tmp6 == abc) {
-        //        break;
-        //    }
-        //}
-        //    reez.clear();
-        //    reez2.clear();
-        //    answer.push_back(calculate(A, B, tmp3));         
-        //    tmp3 = "";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           
-        //    for (int i = (reez.size()); i > 0; i--) {
-        //        while (reez[i] != ' ') {
-        //            reez.pop_back();
-
-        //        }
-
-        //    }
-        //    if (reez.back() == ' ') {
-        //        reez.pop_back();
-        //    }
-
-        //    for (int i = (reez.size()); i > 0; i--) {
-        //        while ((!reez.empty()) || (reez[i] != ' ')) {
-        //            B += reez[i];
-        //        }
-        //    }
-        //    cout << endl << B;
-        //    for (int i = (reez.size()); i > 0; i--) {
-        //        while ((!reez.empty()) || (reez[i] != ' ')) {
-        //            reez.pop_back();
-        //        }
-        //    }
-        //    if (reez.back() == ' ') {
-        //        reez.pop_back();
-        //    }
-
-        //    answer.push_back(calculate(A, B, tmp3));
-
-        //    tmp3 = "";
-
-        
-   
-
-
-        
-
-
-
-
-
-
-
-
-
-
-       /* tmp3 += tr_rez[i];
-        if (isdigit(tr_rez[i])) {
-            answer.push_back(tmp3);
-            tmp3 = "";
-        }
-        else if (tr_rez[i] == dot) {
-            answer.push_back(tmp3);
-            tmp3 = "";
-        }
-        else if (tmp3 == abc) {
-            answer.push_back(tmp3);
-            tmp3 = "";
-        }
-        else if (op(tmp3)) {
-            string A = answer.back();
-            answer.pop_back();
-            if (answer.back() == " ") {
-                answer.pop_back();
-            }
-            string B = answer.back();
-            answer.pop_back();
-            answer.push_back(calculate(B, A, tmp3));
-           
-            tmp3 = "";
-        }
-    
-    cout << endl <<" your answer is : " << answer.back();*/
 
     
 
