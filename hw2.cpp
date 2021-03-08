@@ -211,10 +211,10 @@ int main()
            
       
 
-            for (int i = reez.size()-1; i >= 0; i--) {
+            for (int i = reez.size() - 1; i >= 0; i--) {
                 tmp4 += reez[i];
                 if (isdigit(reez[i])) {
-                      A += tmp4;
+                    A += tmp4;
                     tmp4 = "";
                     if (!answer.empty()) {
                         answer.pop_back();
@@ -222,23 +222,26 @@ int main()
 
                 }
                 else if (tmp4 == ".") {
-                   A += tmp4;
+                    A += tmp4;
                     tmp4 = "";
                     if (!answer.empty()) {
                         answer.pop_back();
                     }
-                  
+
                 }
                 else if (tmp4 == " ") {
-                    if ((!answer.empty())&&(answer.back() ==  " ")) {
+                    if ((!answer.empty()) && (answer.back() == " ")) {
                         answer.pop_back();
+                        break;
                     }
+                }
+            }
                     
                     for (int i = 0; i < answer.size(); i++) {
                         reez2 += answer[i];
 
                     }
-
+                    
                    
                     
               
@@ -260,45 +263,27 @@ int main()
                             }
 
                         }
-                        else if (tmp5 == abc) {
-                            if (!answer.empty()) {
-                                answer.pop_back();
-                                tmp5 = "";
+                        else if  ((answer.empty()) || (tmp5 == abc))
+                        {
+                           
+                               
+                                break;
                             }
-                            
-                            
-                        }
-
 
                     }   
                    
-                }
+                
                 
                
-            }
+            
            
           
-            for (int i = A.size() - 1; i >= 0; i--) {
-                if (isdigit(A[i])) {
-                    if (!A.empty()) {
-                        A.pop_back();
-                    }
-                }
-                else if (A[i] == '.') {
-                    if (!A.empty()) {
-                        A.pop_back();
-                    }
-                }
-                else if (A[i] == ' ') {
-                    if (!A.empty()) {
-                        A.pop_back();
-                    }
-                    break;
-                }
-            }
-            reverse(A.begin(), A.end());
-            reverse(B.begin(), B.end());
+           
             
+            std ::reverse(A.begin(), A.end());
+           std :: reverse(B.begin(), B.end());
+           /*cout <<endl<< A<< endl;
+           cout << B << endl;*/
             answer.push_back(calculate(B, A, tmp3));
             tmp3 = "";
             A = "";
